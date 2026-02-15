@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 5 - Counter</title>
+    <link rel="stylesheet" href="level5.css">
+
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-warning text-dark">
+                        <h3>Level 5 - Counter</h3>
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Collect Your Coins!</h5>
+                        <p class="card-text">
+                            Track your resources! Use the buttons below to increase or decrease your coin count.
+                        </p>
+                        <span class="badge bg-warning text-dark">Level 5/6</span>
+                        
+                        <div class="coin-display" id="coinDisplay">🪙 0</div>
+                        
+                        <div class="d-flex justify-content-center align-items-center gap-4 mt-3">
+                            <button class="btn btn-danger counter-btn" onclick="decreaseCoins()">-</button>
+                            <button class="btn btn-success counter-btn" onclick="increaseCoins()">+</button>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                        <button class="btn btn-secondary" onclick="window.location.href='level4.html'">Back</button>
+                        <button class="btn btn-primary" onclick="window.location.href='level6.html'">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let coins = 0;
+
+        function updateDisplay() {
+            document.getElementById('coinDisplay').textContent = `🪙 ${coins}`;
+        }
+
+        function increaseCoins() {
+            coins++;
+            updateDisplay();
+            
+            
+            const display = document.getElementById('coinDisplay');
+            display.style.transform = 'scale(1.2)';
+            setTimeout(() => {
+                display.style.transform = 'scale(1)';
+            }, 200);
+        }
+
+        function decreaseCoins() {
+            if (coins > 0) {
+                coins--;
+                updateDisplay();
+                
+                
+                const display = document.getElementById('coinDisplay');
+                display.style.transform = 'scale(0.8)';
+                setTimeout(() => {
+                    display.style.transform = 'scale(1)';
+                }, 200);
+            } else {
+                alert('Cannot go below 0 coins!');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+body {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .card {
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: none;
+        }
+
+        .card-header {
+            border-radius: 20px 20px 0 0 !important;
+        }
+
+        .btn {
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .door-btn {
+            font-size: 3rem;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+        }
+
+        .error-message {
+            color: #dc3545;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+
+        .success-message {
+            color: #28a745;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
